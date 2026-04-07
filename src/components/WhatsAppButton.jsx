@@ -1,9 +1,10 @@
 import { MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK, RESTAURANT_NAME } from "../config";
 
 export default function WhatsAppButton() {
   const openWhatsApp = () => {
     window.open(
-      "https://wa.me/573123456789?text=Hola Sazón Cali, me gustaría hacer una reserva",
+      `${WHATSAPP_LINK}?text=Hola ${RESTAURANT_NAME}, me gustaría hacer una reserva`,
       "_blank",
     );
   };

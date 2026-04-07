@@ -1,4 +1,5 @@
 import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
+import { WHATSAPP_LINK, PHONE_LINK, PHONE_DISPLAY } from "../config";
 
 export default function Contact() {
   return (
@@ -73,10 +74,10 @@ export default function Contact() {
                 <div>
                   <p className="font-semibold text-gray-900">Teléfono</p>
                   <a
-                    href="tel:+573123456789"
+                    href={PHONE_LINK}
                     className="text-gray-600 hover:text-orange-600 transition"
                   >
-                    +57 312 345 6789
+                    {PHONE_DISPLAY}
                   </a>
                 </div>
               </div>
@@ -100,9 +101,7 @@ export default function Contact() {
             {/* Buttons */}
             <div className="flex gap-4 mt-8 pt-6 border-t-2 border-gray-300">
               <button
-                onClick={() =>
-                  window.open("https://wa.me/573123456789", "_blank")
-                }
+                onClick={() => window.open(WHATSAPP_LINK, "_blank")}
                 className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all"
               >
                 <MessageCircle size={20} />

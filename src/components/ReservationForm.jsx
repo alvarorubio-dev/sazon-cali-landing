@@ -8,6 +8,7 @@ import {
   MessageSquare,
   CheckCircle,
 } from "lucide-react";
+import { WHATSAPP_NUMBER } from "../config";
 
 export default function ReservationForm() {
   const [formData, setFormData] = useState({
@@ -59,6 +60,23 @@ export default function ReservationForm() {
       return;
     }
 
+    const message = `Hola Sazón Cali!
+
+*Nueva Reserva*
+Nombre: ${formData.nombre}
+Telefono: ${formData.telefono}
+Personas: ${formData.personas}
+Fecha: ${formData.fecha}
+Hora: ${formData.hora}
+${formData.observaciones ? `Observaciones: ${formData.observaciones}` : ""}
+
+Espero su confirmacion!`;
+
+    window.open(
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+
     setSubmitted(true);
     setFormData({
       nombre: "",
@@ -72,8 +90,6 @@ export default function ReservationForm() {
     setTimeout(() => {
       setSubmitted(false);
     }, 5000);
-
-    console.log("Reserva enviada:", formData);
   };
 
   return (
@@ -220,6 +236,7 @@ export default function ReservationForm() {
                     name="fecha"
                     value={formData.fecha}
                     onChange={handleChange}
+                    min={new Date().toISOString().split('T')[0]}
                     className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition ${
                       errors.fecha
                         ? "border-red-500"

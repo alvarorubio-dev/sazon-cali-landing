@@ -1,4 +1,5 @@
 import { MessageCircle } from "lucide-react";
+import { WHATSAPP_NUMBER } from "../config";
 
 export default function MenuSection() {
   const dishes = [
@@ -33,7 +34,7 @@ export default function MenuSection() {
 
   const openWhatsApp = (message) => {
     window.open(
-      `https://wa.me/573123456789?text=${encodeURIComponent(message)}`,
+      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
       "_blank",
     );
   };

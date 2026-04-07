@@ -1,3 +1,5 @@
+import { WHATSAPP_NUMBER, RESTAURANT_NAME } from "../config";
+
 export default function Hero() {
   const scrollToReservation = () => {
     document.getElementById("reserva")?.scrollIntoView({ behavior: "smooth" });
@@ -5,7 +7,7 @@ export default function Hero() {
 
   const openMenu = () => {
     window.open(
-      "https://wa.me/573123456789?text=Hola, me gustaría conocer el menú de Sazón Cali",
+      `https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me gustaría conocer el menú de ${RESTAURANT_NAME}`,
       "_blank",
     );
   };

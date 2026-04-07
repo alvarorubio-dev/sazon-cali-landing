@@ -1,4 +1,5 @@
 import { Instagram, Facebook, MapPin, Phone, Mail } from "lucide-react";
+import { PHONE_LINK, PHONE_DISPLAY } from "../config";
 
 export default function Footer() {
   return (
@@ -83,10 +84,10 @@ export default function Footer() {
               <div className="flex gap-2 items-center">
                 <Phone size={20} className="flex-shrink-0" />
                 <a
-                  href="tel:+573123456789"
+                  href={PHONE_LINK}
                   className="hover:text-orange-500 transition"
                 >
-                  +57 312 345 6789
+                  {PHONE_DISPLAY}
                 </a>
               </div>
               <div className="flex gap-2 items-center">
