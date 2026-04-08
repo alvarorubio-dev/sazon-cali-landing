@@ -40,11 +40,11 @@ export default function MenuSection() {
   };
 
   return (
-    <section id="menu" className="py-20 md:py-32 bg-gray-50">
+    <section id="menu" className="py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="section-title">Nuestros Platos Estrella</h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="section-subtitle">
             Descubre los sabores más auténticos de la cocina caleña, preparados
             con pasión y los mejores ingredientes
           </p>
@@ -54,31 +54,32 @@ export default function MenuSection() {
           {dishes.map((dish, index) => (
             <div
               key={index}
-              className="card-hover bg-white rounded-2xl overflow-hidden shadow-lg"
+              className="glass-card rounded-2xl overflow-hidden group"
             >
               {/* Image */}
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={dish.image}
                   alt={dish.name}
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full font-bold">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute top-4 right-4 bg-gold/90 backdrop-blur-sm text-black px-3 py-1 rounded-full font-bold text-sm">
                   {dish.price}
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   {dish.name}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-400 mb-6 leading-relaxed">
                   {dish.description}
                 </p>
                 <button
                   onClick={() => openWhatsApp(dish.whatsapp)}
-                  className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-300"
+                  className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-green-500/80 hover:bg-green-600 text-white font-semibold rounded-lg transition-all duration-300 backdrop-blur-sm border border-green-400/30"
                 >
                   <MessageCircle size={20} />
                   Ordenar por WhatsApp

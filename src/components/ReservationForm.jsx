@@ -93,34 +93,34 @@ Espero su confirmacion!`;
   };
 
   return (
-    <section id="reserva" className="py-20 md:py-32 bg-gray-50">
+    <section id="reserva" className="py-20 md:py-32">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+        <div className="glass rounded-3xl overflow-hidden shadow-2xl shadow-black/50">
           <div className="grid md:grid-cols-2">
             {/* Left side - Content */}
-            <div className="bg-gradient-to-br from-orange-500 to-orange-600 text-white p-8 md:p-12 flex flex-col justify-center">
+            <div className="bg-gradient-to-br from-orange-500/20 to-orange-600/20 backdrop-blur-sm border-r border-white/10 text-white p-8 md:p-12 flex flex-col justify-center">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Reserva tu mesa
+                Reserva tu <span className="gradient-text">mesa</span>
               </h2>
-              <p className="text-orange-100 text-lg mb-8 leading-relaxed">
+              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
                 Déjanos tus datos y te confirmamos tu reserva en menos de 30
                 minutos.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4">
-                  <Calendar className="flex-shrink-0" size={24} />
+                  <Calendar className="flex-shrink-0 text-gold" size={24} />
                   <div>
-                    <h3 className="font-bold">Disponibilidad</h3>
-                    <p className="text-orange-100">
+                    <h3 className="font-bold text-white">Disponibilidad</h3>
+                    <p className="text-gray-400">
                       Todos los días de la semana
                     </p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <Clock className="flex-shrink-0" size={24} />
+                  <Clock className="flex-shrink-0 text-gold" size={24} />
                   <div>
-                    <h3 className="font-bold">Horario</h3>
-                    <p className="text-orange-100">12:00 PM - 12:00 AM</p>
+                    <h3 className="font-bold text-white">Horario</h3>
+                    <p className="text-gray-400">12:00 PM - 12:00 AM</p>
                   </div>
                 </div>
               </div>
@@ -129,16 +129,16 @@ Espero su confirmacion!`;
             {/* Right side - Form */}
             <div className="p-8 md:p-12">
               {submitted && (
-                <div className="mb-6 p-4 bg-green-50 border-2 border-green-500 rounded-lg flex gap-3 animate-pulse">
+                <div className="mb-6 p-4 bg-green-500/10 border border-green-500/30 rounded-lg flex gap-3 backdrop-blur-sm">
                   <CheckCircle
-                    className="text-green-500 flex-shrink-0"
+                    className="text-green-400 flex-shrink-0"
                     size={24}
                   />
                   <div>
-                    <h3 className="font-bold text-green-700">
+                    <h3 className="font-bold text-green-400">
                       ¡Reserva confirmada!
                     </h3>
-                    <p className="text-green-600 text-sm">
+                    <p className="text-green-300/80 text-sm">
                       Nos contactaremos pronto para confirmar los detalles.
                     </p>
                   </div>
@@ -148,8 +148,8 @@ Espero su confirmacion!`;
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Nombre */}
                 <div>
-                  <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                    <User size={18} />
+                  <label className="flex items-center gap-2 text-gray-300 font-semibold mb-2">
+                    <User size={18} className="text-gold" />
                     Nombre completo
                   </label>
                   <input
@@ -157,22 +157,18 @@ Espero su confirmacion!`;
                     name="nombre"
                     value={formData.nombre}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition ${
-                      errors.nombre
-                        ? "border-red-500"
-                        : "border-gray-300 focus:border-orange-500"
-                    }`}
+                    className={`input-dark ${errors.nombre ? "input-dark-error" : ""}`}
                     placeholder="Tu nombre"
                   />
                   {errors.nombre && (
-                    <p className="text-red-500 text-sm mt-1">{errors.nombre}</p>
+                    <p className="text-red-400 text-sm mt-1">{errors.nombre}</p>
                   )}
                 </div>
 
                 {/* Teléfono */}
                 <div>
-                  <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                    <Phone size={18} />
+                  <label className="flex items-center gap-2 text-gray-300 font-semibold mb-2">
+                    <Phone size={18} className="text-gold" />
                     Teléfono
                   </label>
                   <input
@@ -180,15 +176,11 @@ Espero su confirmacion!`;
                     name="telefono"
                     value={formData.telefono}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition ${
-                      errors.telefono
-                        ? "border-red-500"
-                        : "border-gray-300 focus:border-orange-500"
-                    }`}
+                    className={`input-dark ${errors.telefono ? "input-dark-error" : ""}`}
                     placeholder="+57 3XX XXX XXXX"
                   />
                   {errors.telefono && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-400 text-sm mt-1">
                       {errors.telefono}
                     </p>
                   )}
@@ -196,19 +188,15 @@ Espero su confirmacion!`;
 
                 {/* Personas */}
                 <div>
-                  <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                    <Users size={18} />
+                  <label className="flex items-center gap-2 text-gray-300 font-semibold mb-2">
+                    <Users size={18} className="text-gold" />
                     Cantidad de personas
                   </label>
                   <select
                     name="personas"
                     value={formData.personas}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition ${
-                      errors.personas
-                        ? "border-red-500"
-                        : "border-gray-300 focus:border-orange-500"
-                    }`}
+                    className={`input-dark ${errors.personas ? "input-dark-error" : ""}`}
                   >
                     <option value="">Selecciona cantidad</option>
                     {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
@@ -219,7 +207,7 @@ Espero su confirmacion!`;
                     <option value="8+">8 o más</option>
                   </select>
                   {errors.personas && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-400 text-sm mt-1">
                       {errors.personas}
                     </p>
                   )}
@@ -227,8 +215,8 @@ Espero su confirmacion!`;
 
                 {/* Fecha */}
                 <div>
-                  <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                    <Calendar size={18} />
+                  <label className="flex items-center gap-2 text-gray-300 font-semibold mb-2">
+                    <Calendar size={18} className="text-gold" />
                     Fecha
                   </label>
                   <input
@@ -237,21 +225,17 @@ Espero su confirmacion!`;
                     value={formData.fecha}
                     onChange={handleChange}
                     min={new Date().toISOString().split('T')[0]}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition ${
-                      errors.fecha
-                        ? "border-red-500"
-                        : "border-gray-300 focus:border-orange-500"
-                    }`}
+                    className={`input-dark ${errors.fecha ? "input-dark-error" : ""}`}
                   />
                   {errors.fecha && (
-                    <p className="text-red-500 text-sm mt-1">{errors.fecha}</p>
+                    <p className="text-red-400 text-sm mt-1">{errors.fecha}</p>
                   )}
                 </div>
 
                 {/* Hora */}
                 <div>
-                  <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                    <Clock size={18} />
+                  <label className="flex items-center gap-2 text-gray-300 font-semibold mb-2">
+                    <Clock size={18} className="text-gold" />
                     Hora
                   </label>
                   <input
@@ -259,28 +243,24 @@ Espero su confirmacion!`;
                     name="hora"
                     value={formData.hora}
                     onChange={handleChange}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition ${
-                      errors.hora
-                        ? "border-red-500"
-                        : "border-gray-300 focus:border-orange-500"
-                    }`}
+                    className={`input-dark ${errors.hora ? "input-dark-error" : ""}`}
                   />
                   {errors.hora && (
-                    <p className="text-red-500 text-sm mt-1">{errors.hora}</p>
+                    <p className="text-red-400 text-sm mt-1">{errors.hora}</p>
                   )}
                 </div>
 
                 {/* Observaciones */}
                 <div>
-                  <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                    <MessageSquare size={18} />
+                  <label className="flex items-center gap-2 text-gray-300 font-semibold mb-2">
+                    <MessageSquare size={18} className="text-gold" />
                     Observaciones (opcional)
                   </label>
                   <textarea
                     name="observaciones"
                     value={formData.observaciones}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-orange-500 transition resize-none"
+                    className="input-dark resize-none"
                     rows="3"
                     placeholder="Alergias, preferencias especiales, etc..."
                   ></textarea>

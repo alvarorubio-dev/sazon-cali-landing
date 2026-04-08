@@ -20,7 +20,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => {
@@ -28,15 +28,15 @@ export default function TrustBar() {
             return (
               <div
                 key={index}
-                className="flex flex-col items-center text-center p-8 rounded-xl hover:bg-orange-50 transition-all duration-300"
+                className="glass-card flex flex-col items-center text-center p-8 rounded-2xl"
               >
-                <div className="p-4 bg-orange-100 rounded-full mb-4">
-                  <IconComponent size={40} className="text-orange-600" />
+                <div className="p-4 bg-gold/10 backdrop-blur-sm rounded-full mb-4 border border-gold/20">
+                  <IconComponent size={40} className="text-gold" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                <h3 className="text-xl font-bold text-white mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-gray-400">{feature.description}</p>
               </div>
             );
           })}

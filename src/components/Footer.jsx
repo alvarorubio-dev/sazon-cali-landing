@@ -3,7 +3,7 @@ import { PHONE_LINK, PHONE_DISPLAY } from "../config";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-16">
+    <footer className="glass border-t border-white/10 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Logo Section */}
@@ -19,7 +19,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-orange-500 transition"
+                className="text-gray-400 hover:text-gold transition"
               >
                 <Instagram size={24} />
               </a>
@@ -27,7 +27,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-orange-500 transition"
+                className="text-gray-400 hover:text-gold transition"
               >
                 <Facebook size={24} />
               </a>
@@ -36,12 +36,12 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Navegación</h4>
+            <h4 className="font-bold text-lg mb-4 text-white">Navegación</h4>
             <ul className="space-y-2">
               <li>
                 <a
                   href="#menu"
-                  className="text-gray-400 hover:text-orange-500 transition"
+                  className="text-gray-400 hover:text-gold transition"
                 >
                   Menú
                 </a>
@@ -49,7 +49,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#about"
-                  className="text-gray-400 hover:text-orange-500 transition"
+                  className="text-gray-400 hover:text-gold transition"
                 >
                   Nosotros
                 </a>
@@ -57,7 +57,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#gallery"
-                  className="text-gray-400 hover:text-orange-500 transition"
+                  className="text-gray-400 hover:text-gold transition"
                 >
                   Galería
                 </a>
@@ -65,7 +65,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#reserva"
-                  className="text-gray-400 hover:text-orange-500 transition"
+                  className="text-gray-400 hover:text-gold transition"
                 >
                   Reservas
                 </a>
@@ -75,26 +75,26 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Contacto</h4>
+            <h4 className="font-bold text-lg mb-4 text-white">Contacto</h4>
             <div className="space-y-3 text-gray-400">
               <div className="flex gap-2 items-start">
-                <MapPin size={20} className="flex-shrink-0 mt-0.5" />
+                <MapPin size={20} className="flex-shrink-0 mt-0.5 text-gold" />
                 <span>Calle 5 # 34-12, Cali</span>
               </div>
               <div className="flex gap-2 items-center">
-                <Phone size={20} className="flex-shrink-0" />
+                <Phone size={20} className="flex-shrink-0 text-gold" />
                 <a
                   href={PHONE_LINK}
-                  className="hover:text-orange-500 transition"
+                  className="hover:text-gold transition"
                 >
                   {PHONE_DISPLAY}
                 </a>
               </div>
               <div className="flex gap-2 items-center">
-                <Mail size={20} className="flex-shrink-0" />
+                <Mail size={20} className="flex-shrink-0 text-gold" />
                 <a
                   href="mailto:hola@sazoncali.com"
-                  className="hover:text-orange-500 transition"
+                  className="hover:text-gold transition"
                 >
                   hola@sazoncali.com
                 </a>
@@ -104,28 +104,28 @@ export default function Footer() {
 
           {/* Hours */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Horarios</h4>
+            <h4 className="font-bold text-lg mb-4 text-white">Horarios</h4>
             <div className="space-y-2 text-gray-400 text-sm">
               <div>
-                <span className="font-semibold">L-J:</span> 12:00 PM - 10:00 PM
+                <span className="font-semibold text-gray-300">L-J:</span> 12:00 PM - 10:00 PM
               </div>
               <div>
-                <span className="font-semibold">V-S:</span> 12:00 PM - 12:00 AM
+                <span className="font-semibold text-gray-300">V-S:</span> 12:00 PM - 12:00 AM
               </div>
               <div>
-                <span className="font-semibold">D:</span> 12:00 PM - 6:00 PM
+                <span className="font-semibold text-gray-300">D:</span> 12:00 PM - 6:00 PM
               </div>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-center md:text-left">
+            <p className="text-gray-500 text-center md:text-left">
               © 2026 Sazón Cali. Todos los derechos reservados.
             </p>
-            <p className="text-gray-400 text-center md:text-right mt-4 md:mt-0">
+            <p className="text-gray-500 text-center md:text-right mt-4 md:mt-0">
               Hecho con ❤️ en Cali, Colombia
             </p>
           </div>
